@@ -98,11 +98,12 @@ while True:
                 
                 if current_time - last_gesture_time > gesture_cooldown:
                     last_gesture_time = current_time
-                    cv2.putText(image, "Going to sleep!", (50, 50), 
+                    cv2.putText(image, "Middle finger detected", (50, 50), 
                               cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
                     # Wait 1 second then put computer to sleep
                     time.sleep(1)
                     put_computer_to_sleep()
+                    #print("TEST: Middle finger gesture detected!")
                 else:
                     remaining_cooldown = gesture_cooldown - (current_time - last_gesture_time)
                     gesture_status = f"Cooldown: {remaining_cooldown:.1f}s"
@@ -116,11 +117,12 @@ while True:
                 
                 if current_time - last_gesture_time > gesture_cooldown:
                     last_gesture_time = current_time
-                    cv2.putText(image, "Going to sleep!", (50, 50), 
+                    cv2.putText(image, "Pinkie finger detected", (50, 50), 
                               cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
                     # Wait 1 second then put computer to sleep
                     time.sleep(1)
                     put_computer_to_sleep()
+                    #print("TEST: Pinkie finger gesture detected!")
                 else:
                     remaining_cooldown = gesture_cooldown - (current_time - last_gesture_time)
                     gesture_status = f"Cooldown: {remaining_cooldown:.1f}s"
