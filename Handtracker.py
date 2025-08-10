@@ -1,9 +1,8 @@
-#Import the libraries
-
+ #Import the libraries
 
 import cv2
 import mediapipe as mp
-import subprocess
+import subprocess #connect with terminal (Putting to sleep)
 import time
 
 mp_drawing = mp.solutions.drawing_utils
@@ -15,7 +14,7 @@ hands = mp_hands.Hands()
 
 # Variables for gesture detection
 last_gesture_time = 0
-gesture_cooldown = 3  # 3 second cooldown between gestures
+gesture_cooldown = 3  # 3 second cooldown between gestures 
 
 def is_middle_finger_up(landmarks):
     """
@@ -59,13 +58,13 @@ def put_computer_to_sleep():
     Put the computer to sleep on macOS
     """
     try:
-        # Use pmset command to put Mac to sleep
+        # pmset command 
         subprocess.run(["pmset", "sleepnow"], check=True)
         print("Putting computer to sleep...")
         return True
     except subprocess.CalledProcessError:
         try:
-            # Alternative: use osascript (AppleScript)
+            # Alt: use osascript
             subprocess.run(["osascript", "-e", "tell application \"System Events\" to sleep"], check=True)
             print("Putting computer to sleep...")
             return True

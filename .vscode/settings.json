@@ -4,3 +4,5 @@
         "python": "cd $dir && python3 -u $fileName"
     }
 }
+
+// runs the program in python3 instead of python 
