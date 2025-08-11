@@ -71,11 +71,13 @@ def report_finger_status(landmarks):
     print("; ".join(status))
 
 while True:
+    # image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
     ret, frame = capture.read()
     if not ret:
         print("Failed to capture image")
         break
 
+    frame = cv2.flip(frame, 2) # Flip horizontally
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     results = hands.process(frame_rgb)
 
