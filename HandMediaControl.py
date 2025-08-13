@@ -1,3 +1,5 @@
+# About: Controls the media player, linked to spotify with the hand movement.
+
 import cv2
 import mediapipe as mp
 import subprocess
@@ -8,10 +10,10 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
 
-# Camera init with fallback
+# Cam init with fallback
 capture = cv2.VideoCapture(0)
-if not capture.isOpened():
-    capture = cv2.VideoCapture(1)
+# if not capture.isOpened():
+#     capture = cv2.VideoCapture(1)
 
 # MediaPipe Hands
 hands = mp_hands.Hands(static_image_mode=False, max_num_hands=1, min_detection_confidence=0.5, min_tracking_confidence=0.5)
