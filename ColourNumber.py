@@ -12,7 +12,7 @@ if not cap.isOpened():
 
 hands = mp_hands.Hands(static_image_mode=False, max_num_hands=4, min_detection_confidence=0.5)
 
-# Landmark indices for finger tips and pips
+# Landmark indices for finger tips and pips (fixed)
 FINGER_TIPS = [4, 8, 12, 16, 20]
 FINGER_PIPS = [3, 6, 10, 14, 18]
 
